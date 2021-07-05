@@ -22,7 +22,7 @@ function check_file_and_run_script() {
                         ip=`ping -c 1 -W 0.1 "$domain" | grep "PING" | awk '{print $3}' | sed 's/(//' | sed 's/)//' | sed 's/://'`
                         echo "$domain_name, $ip" >> $PATH_FILE_DOMAIN_IP
         fi
-        value_line_csv=$value_line_csv+1
+        value_line_csv=$(($value_line_csv + 1))
   done < $PATH_FILE_DOMAIN
 }
 
